@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<title>Thats a 404!</title>
+<head>
+	<style>
+	body { font-family: Arial;}
+	#what { font-weight: bold; margin: 0; position: absolute; top: 30%; left: 50%; transform: translate(-50%, 0%); font-size: 200px;}
+	#l { margin: 0; position: absolute; top: 50%; left: 50%; transform: translate(-50%, 0%); display: block; font-size: 30px; width: 50%; display: inline-block; padding-top: 10px;}
+	#loc { display: inline-block; color: green; font-weight: bold;}
+	</style>
+</head>
+<body>
+	<div id="what">WHAT????</div>
+	<div id="l">What I can tell you, is that <div id="loc"></div> doesn't exist...</div>
+	<script>document.getElementById("loc").textContent=window.location.href;</script>
+</body>
+</html>
