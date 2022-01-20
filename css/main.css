@@ -1,0 +1,143 @@
+body::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+}
+html, body {
+  font-family: Arial;
+  background-color: #ffffff;
+  color: #ffffff;
+  margin: 0;
+  padding: 0;
+  height: 100%
+}
+#on {
+border-radius: 4px;
+font-size: 16px;
+position: relative;
+cursor: move;
+color: #fff;
+text-decoration: none;
+background: #b0abab;
+padding: 10px 20px 8px;
+margin-right: 7px;
+margin-top: 10px;
+display: inline-block;
+font-family: Arial;
+}
+#msg {
+  background-color: #121212;
+  position: absolute;
+  left: 90px;
+  width: calc(100% - 90px);
+  text-align: center;
+  height: 30px;
+  vertical-align: center;
+  padding-top: 10px;
+}
+#nav-bar {
+  width: 90px;
+  background-color: #121212;
+  height: 100%;
+  padding-bottom: 0px;
+}
+#nav {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+}
+.side {
+  margin-top: 20px;
+  background-color: #292828;
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 75px;  
+  font-size: 30px;
+}
+
+#img {
+  padding-top: 23px;
+  height: 40%;
+}
+#house {
+  margin-top: 5px;
+}
+#main {
+  background-color: #2e2c2c;
+  position: absolute;
+  left: 90px;
+  top: 40px;
+  width: calc(100% - 90px);
+  height: calc(100% - 40px);
+}
+#text {
+  margin-top: 5px;
+}
+.switch {
+  position: absolute;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+  left: calc(100% - 70px);
+  top: 3px;
+}
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #333333;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #333333;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+.mode {
+  position: absolute;
+  left: calc(100% - 160px);
+  top: 8px;
+}
