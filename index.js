@@ -1,11 +1,12 @@
-const express = require('express')
-const path = require('path')
-const PORT = process.env.PORT || 5000
-var app = express();
-app.use(express.static(path.join(__dirname, 'public')));
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'ejs');
+const express = require('express');
+const app = express();
+const port = process.env.PORT || 5000;
+//Route setup
 app.get('/', (req, res) => {
-  res.sendFile("pages/index.html")
-});
-  .listen(PORT, () => console.log(`Listening on ${ PORT }`));
+  
+  res.send('root route');
+})
+//Start server
+app.listen(port, (req, res) => {
+console.log(`server listening on port: ${port}`)
+ });
