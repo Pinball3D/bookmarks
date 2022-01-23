@@ -189,3 +189,23 @@ if (getCookie("mode") == "dark") {
   check();
   box.checked=true;
 }
+function getParameterByName(name, url = window.location.href) {
+    name = name.replace(/[\[\]]/g, '\\$&');
+    var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, ' '));
+}
+var value = getParameterByName("page");
+if(value == "backgrounds") {
+  background();
+} else if(value == "cursors") {
+  cursor();
+} else if(value == "sounds") {
+  sound();
+} else if(value == "misc") {
+  miscc();
+} else {
+  home();
+}
