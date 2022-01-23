@@ -116,7 +116,6 @@ function miscc() {
   misc.hidden= false;
   window.location.href=base+"misc";
 }
-home();
 
 
 //Light mode/darkmode
