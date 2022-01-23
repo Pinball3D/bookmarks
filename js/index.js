@@ -39,7 +39,7 @@ var iconcursor = document.getElementById("cur");
 var iconsound = document.getElementById("soun");
 var iconmisc = document.getElementById("mis");
 var message = "Welcome to the new bookmarks page!";
-var base = "https://bookmarks.andysthings.tk?page=";
+var base = "?page=";
 
 function home() {
   selected = "#house";
