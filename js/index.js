@@ -40,8 +40,7 @@ var iconsound = document.getElementById("soun");
 var iconmisc = document.getElementById("mis");
 var message = "Welcome to the new bookmarks page!";
 var base = "?page=";
-
-function home() {
+function homea() {
   selected = "#house";
   iconhouse.style.backgroundColor=selcolor;
   iconback.style.backgroundColor=color;
@@ -54,9 +53,12 @@ function home() {
   cursors.hidden = true;
   sounds.hidden = true;
   misc.hidden= true;
+}
+function home() {
+  homea();
   window.location.href=base+"";
 }
-function background() {
+function backa() {
   selected="#bg";
   iconback.style.backgroundColor=selcolor;
   iconhouse.style.backgroundColor=color;
@@ -69,9 +71,12 @@ function background() {
   cursors.hidden = true;
   sounds.hidden = true;
   misc.hidden= true;
+}
+function background() {
+  backa()
   window.location.href=base+"backgrounds";
 }
-function cursor() {
+function cura() {
   selected="#cur";
   iconcursor.style.backgroundColor=selcolor;
   iconback.style.backgroundColor=color;
@@ -84,9 +89,12 @@ function cursor() {
   cursors.hidden = false;
   sounds.hidden = true;
   misc.hidden= true;
+}
+function cursor() {
+  cura();
   window.location.href=base+"cursors";
 }
-function sound() {
+function sounda() {
   selected="#soun";
   iconsound.style.backgroundColor=selcolor;
   iconback.style.backgroundColor=color;
@@ -99,9 +107,12 @@ function sound() {
   cursors.hidden = true;
   sounds.hidden = false;
   misc.hidden= true;
+}
+function sound() {
+  sounda();
   window.location.href=base+"sounds";
 }
-function miscc() {
+function misca() {
   selected="#mis";
   iconmisc.style.backgroundColor=selcolor;
   iconback.style.backgroundColor=color;
@@ -114,6 +125,9 @@ function miscc() {
   cursors.hidden = true;
   sounds.hidden = true;
   misc.hidden= false;
+}
+function miscc() {
+  misca();
   window.location.href=base+"misc";
 }
 
@@ -203,13 +217,13 @@ function getParameterByName(name, url = window.location.href) {
 }
 var value = getParameterByName("page");
 if(value == "backgrounds") {
-  background();
+  backa();
 } else if(value == "cursors") {
-  cursor();
+  cura();
 } else if(value == "sounds") {
-  sound();
+  sounda();
 } else if(value == "misc") {
-  miscc();
+  misca();
 } else {
-  home();
+  homea();
 }
