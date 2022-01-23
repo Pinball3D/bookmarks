@@ -39,7 +39,14 @@ var iconcursor = document.getElementById("cur");
 var iconsound = document.getElementById("soun");
 var iconmisc = document.getElementById("mis");
 var message = "Welcome to the new bookmarks page!";
-var base = "?page=";
+function insertUrlParam(key, value) {
+  if (history.pushState) {
+      let searchParams = new URLSearchParams(window.location.search);
+      searchParams.set(key, value);
+      let newurl = window.location.protocol + "//" + window.location.host + window.location.pathname + '?' + searchParams.toString();
+      window.history.pushState({path: newurl}, '', newurl);
+  }
+}
 function homea() {
   selected = "#house";
   iconhouse.style.backgroundColor=selcolor;
@@ -56,7 +63,7 @@ function homea() {
 }
 function home() {
   homea();
-  window.location.href=base+"";
+  insertUrlParam("page", "");
 }
 function backa() {
   selected="#bg";
@@ -74,7 +81,7 @@ function backa() {
 }
 function background() {
   backa()
-  window.location.href=base+"backgrounds";
+  insertUrlParam("page", "backgrounds");
 }
 function cura() {
   selected="#cur";
@@ -92,7 +99,7 @@ function cura() {
 }
 function cursor() {
   cura();
-  window.location.href=base+"cursors";
+  insertUrlParam("page", "cursors");
 }
 function sounda() {
   selected="#soun";
@@ -110,7 +117,7 @@ function sounda() {
 }
 function sound() {
   sounda();
-  window.location.href=base+"sounds";
+  insertUrlParam("page", "sounds");
 }
 function misca() {
   selected="#mis";
@@ -128,7 +135,7 @@ function misca() {
 }
 function miscc() {
   misca();
-  window.location.href=base+"misc";
+  insertUrlParam("page", "misc");
 }
 
 
