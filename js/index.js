@@ -39,7 +39,7 @@ var iconcursor = document.getElementById("cur");
 var iconsound = document.getElementById("soun");
 var iconmisc = document.getElementById("mis");
 var message = "Welcome to the new bookmarks page!";
-
+var base = "https://bookmarks.andysthings.tk?page=";
 
 function home() {
   selected = "#house";
@@ -54,6 +54,7 @@ function home() {
   cursors.hidden = true;
   sounds.hidden = true;
   misc.hidden= true;
+  window.location.href=base+"";
 }
 function background() {
   selected="#bg";
@@ -68,6 +69,7 @@ function background() {
   cursors.hidden = true;
   sounds.hidden = true;
   misc.hidden= true;
+  window.location.href=base+"backgrounds";
 }
 function cursor() {
   selected="#cur";
@@ -82,6 +84,7 @@ function cursor() {
   cursors.hidden = false;
   sounds.hidden = true;
   misc.hidden= true;
+  window.location.href=base+"cursors";
 }
 function sound() {
   selected="#soun";
@@ -96,6 +99,7 @@ function sound() {
   cursors.hidden = true;
   sounds.hidden = false;
   misc.hidden= true;
+  window.location.href=base+"sounds";
 }
 function miscc() {
   selected="#mis";
@@ -110,6 +114,7 @@ function miscc() {
   cursors.hidden = true;
   sounds.hidden = true;
   misc.hidden= false;
+  window.location.href=base+"misc";
 }
 home();
 
