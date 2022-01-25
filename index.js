@@ -4,7 +4,7 @@ const port = process.env.PORT || 5000;
 //Route setup
 app.get('/', (req, res) => {
   res.sendFile(process.cwd() + "/html/index.html");
-  console.log(req.query.debug);
+  console.log(req.query.query);
 });
 app.get('/main.css', (req, res) => {
   res.sendFile(process.cwd() + "/css/main.css");
