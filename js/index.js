@@ -234,3 +234,8 @@ if(value == "backgrounds") {
 } else {
   homea();
 }
+function ask() {
+  var input = document.querySelector("#ask");
+  document.location="?page="+value+"&query="+input.value;
+  input.value="";
+}
