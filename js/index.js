@@ -236,6 +236,6 @@ if(value == "backgrounds") {
 }
 function ask() {
   var input = document.querySelector("#ask");
-  insertUrlParam("query", input.value);
+  document.location="?page="+value+"&query="+input.value;
   input.value="";
 }
