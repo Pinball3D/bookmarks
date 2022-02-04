@@ -8,7 +8,7 @@ $.getJSON('https://pinball3d.github.io/storage/bookmark-code/registry.json', fun
     var url = "https://pinball3d.github.io/storage/bookmark-code/"+data[i].code;
     console.log(url)
     var a = document.createElement("a");
-    var base = "var xmlHttp = new XMLHttpRequest(); xmlHttp.open( 'GET', '"+url+"', false ); eval(xmlHttp.responseText);";
+    var base = "var xmlHttp = new XMLHttpRequest(); xmlHttp.open( 'GET', '"+url+"', false ); xmlHttp.send(''); eval(xmlHttp.responseText);";
     console.log(base)
     var code = "javascript: "+encodeURIComponent("(function(){" + base.trim() +  "})();");
     a.href = code;
