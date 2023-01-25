@@ -1,1 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="main.css">
+  <title>Bookmarks</title>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZQ4L9GTGBE"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-ZQ4L9GTGBE');
+  gtag('send', 'pageview', location.pathname);
+</script>
+</head>
+<body>
+  <div id="topbar">
+  <div id="msg"></div>
+  <div class="mode" id="text">Dark Mode</div>
+  <label class="switch">
+  <input type="checkbox" id="check">
+  <span class="slider round"></span>
+</label>
+</div>
+<div id="nav-bar">
+<div id="nav">
+<div id="house" class="side" onclick="home()"><img id="img" src="https://img.icons8.com/fluency/344/home.png"</img></div>
+  <div class="side" id="bg" onclick="background()"><img src="https://img.icons8.com/color/344/image.png" id="img"></img></div>
+  <div class="side" id="cur" onclick="cursor()">🖱️</div>
+  <div class="side" id="soun" onclick="sound()">🔊</div>
+<div id="mis" class="side" onclick="miscc()"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path d="M18 14.25a2.25 2.25 0 110-4.5 2.25 2.25 0 010 4.5zm-6 0a2.25 2.25 0 110-4.5 2.25 2.25 0 010 4.5zm-6 0a2.25 2.25 0 110-4.5 2.25 2.25 0 010 4.5z" fill="#ffffff" fill-rule="evenodd"></path></svg></img></div>
+</div>
+</div>
+<div id="main">
+  <center id="content">
+    <div id="text" style="font-weight: bold; font-size: 20px;">INFO:</div>
+    <div id="text">HOLY UNBLOCKER: <a id='h' target="_blank" href="https://www.ub-nms.tk">CLICK HERE</a></div>
+    <div id="text">❗ MAJOR UPDATE! PLEASE RE-ADD ALL BOOKMARKS ❗</div>
+    <div>❗ ALL BROKEN BOOKMARKS FIXED ❗</div><div>❗ REPORT BROKEN BOOKMARKS ON THE SUGGESTION FORM ❗</div>
+    <div id="text">Click <a id="h" href="https://forms.gle/evsRrjjP5psbManM6" target="_blank">here</a> to suggest a new bookmark</div>
+    <div id="text">Click the buttons on the left to go to the different bookmark catagories</div>
+    <div>Ask Me: <input id="ask"><button id="submit" onclick="ask()">Ask!</button></div>
+  </center>
+  <center>
+<div id="backgrounds"></div>
+<div id="cursors"></div>
+<div id="sounds"></div>
+<div id="misc"></div>
+  </center>
+</div>
+<script src="beta.js"></script>
+</body>
+</html>
 
