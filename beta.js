@@ -38,7 +38,7 @@ var iconback = document.getElementById("bg");
 var iconcursor = document.getElementById("cur");
 var iconsound = document.getElementById("soun");
 var iconmisc = document.getElementById("mis");
-var message = "Welcome to the new bookmarks page!";
+var message = "Welcome to the BETA bookmarks page!";
 function insertUrlParam(key, value) {
   if (history.pushState) {
       let searchParams = new URLSearchParams(window.location.search);
