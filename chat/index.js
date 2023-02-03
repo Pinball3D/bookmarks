@@ -84,6 +84,7 @@ function addPerson(name) {
   var div = document.createElement("div")
   div.innerHTML = name;
   div.className = "person";
+  div.dataset.name = name;
   document.querySelector("#people").appendChild(div);
   personlist[name] = div
 }
