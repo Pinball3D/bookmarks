@@ -38,6 +38,7 @@ wss.onmessage = (event) => {
       break;
     default:
       var ele = document.createElement("div")
+      if(data["type"] == "public") {
       var elem = document.querySelector("#messages");
       ele.className = "message"
       data["message"].split(" ").forEach(i => {
@@ -56,7 +57,12 @@ wss.onmessage = (event) => {
           elem.appendChild(ele)
         }
       })
+      } else {
+        //privatemsg
+        console.log("Private")
+      }
       elem.scrollTop = elem.scrollHeight;
+      
       
   }
 }
