@@ -42,7 +42,7 @@ wss.onmessage = (event) => {
       ele.className = "message"
       data["message"].split(" ").forEach(i => {
         if(i.includes("http://") || i.includes("https://")) {
-          if(i.includes(".png")||i.includes(".jpg")||i.includes(".jpeg")||i.includes(".gif")) {
+          if(i.includes(".png")||i.includes(".jpg")||i.includes(".jpeg")||i.includes(".gif")||i.includes("data:image/")) {
             ele.innerHTML = data["sender"] + ": "
             var img = document.createElement("img");
             img.style="width: 250px; padding-left: 10px;";
