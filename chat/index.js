@@ -57,11 +57,11 @@ wss.onmessage = (event) => {
           elem.appendChild(ele)
         }
       })
-      } else {
-        //privatemsg
-        console.log("Private")
-      }
       elem.scrollTop = elem.scrollHeight;
+      } else {
+        notifyPerson(data["sender"]);
+        console.log("Private");
+      }
       
       
   }
