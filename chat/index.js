@@ -8,9 +8,9 @@ document.querySelector("#msgbox").onkeydown = function(key) {
   }
 }
 wss.onopen = (event) => {
-  name = "bob"; //prompt("Name: ");
+  name = prompt("Name: ");
   if(name.toLowerCase() == "rusa") {
-    name = "Rusha"
+    name = "Rusha Alluli"
   }
   wss.send(JSON.stringify({"action": "sendName", "name": name}))
 }
