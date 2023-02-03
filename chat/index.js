@@ -90,3 +90,11 @@ function addPerson(name) {
 function removePerson(name) {
   personlist[name].remove();
 }
+function notifyPerson(name) {
+  var circle = document.createElement("div");
+  circle.style="transform: translate(-0%, -50%); position: absolute; top: 50%; right: 10px; background-color: red; border-radius: 50%; width: 15px; height: 15px;";
+  document.querySelector("div[data-name='"+name+"']").appendChild(circle);
+}
+function unNotifyPerson(name) {
+  document.querySelector("div[data-name='"+name+"']").innerHTML = name
+}
