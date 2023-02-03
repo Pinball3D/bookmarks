@@ -1,6 +1,6 @@
 var personlist = {}
 var name = ""
-var wss = new WebSocket("wss://chat-server.andrewsmiley.repl.co");
+var wss = new WebSocket("wss://18.205.105.185.nip.io/");
 document.querySelector("#msgbox").onkeydown = function(key) {
   if(key.key == "Enter") {
     wss.send(JSON.stringify({"action": "sendMessage", "message": document.querySelector("#msgbox").value, "sender": name}))
