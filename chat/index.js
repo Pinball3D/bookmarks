@@ -1,5 +1,6 @@
-var personlist = {}
-var name = ""
+var personlist = {};
+var name = "";
+var privateMessages = {};
 var wss = new WebSocket("wss://18.205.105.185.sslip.io/");
 document.querySelector("#msgbox").onkeydown = function(key) {
   if(key.key == "Enter") {
@@ -60,6 +61,7 @@ wss.onmessage = (event) => {
       elem.scrollTop = elem.scrollHeight;
       } else {
         notifyPerson(data["sender"]);
+        privateMessages[data["sender"]].appendChild(data["sender"]+": "+data["message"])
         console.log("Private");
       }
       
@@ -81,12 +83,14 @@ function evalName(name) {
 }
 
 function addPerson(name) {
+  privateMessages[name] = [];
   var div = document.createElement("div")
   div.innerHTML = name;
   div.className = "person";
   div.dataset.name = name;
+  div.addEventListener("click", privateClick);
   document.querySelector("#people").appendChild(div);
-  personlist[name] = div
+  personlist[name] = div;
 }
 function removePerson(name) {
   personlist[name].remove();
@@ -98,4 +102,12 @@ function notifyPerson(name) {
 }
 function unNotifyPerson(name) {
   document.querySelector("div[data-name='"+name+"']").innerHTML = name
+}
+function privateClick(event) {
+  console.log(event.target.dataset.name);
+  var div = document.createElement("div")
+  div.className = "privateMSG";
+  div.innerHTML = "<div id='title' style='width: 100%; left: 0%;'>Private Message: "+event.target.dataset.name+"</div>";
+  document.querySelector("#main").style.filter = "blur(10px)";
+  document.body.appendChild(div);
 }
