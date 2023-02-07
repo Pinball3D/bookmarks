@@ -52,8 +52,8 @@ wss.onmessage = (event) => {
       if(data["type"] == "public") {
       var elem = document.querySelector("#messages");
       ele.className = "message"
-      data["message"].split(" ").forEach(i => {
-        if(i.includes("http://") || i.includes("https://")) {
+      var i = data["message"]
+        if(i.includes("http://") || i.includes("https://") || i.includes("data:image/")) {
           if(i.includes(".png")||i.includes(".jpg")||i.includes(".jpeg")||i.includes(".gif")||i.includes("data:image/")) {
             ele.innerHTML = data["sender"] + ": "
             var img = document.createElement("img");
@@ -70,7 +70,6 @@ wss.onmessage = (event) => {
           ele.innerHTML = data["sender"] + ": " + data["message"]
           elem.appendChild(ele)
         }
-      })
       elem.scrollTop = elem.scrollHeight;
       } else {
         notifyPerson(data["sender"]);
