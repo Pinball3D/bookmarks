@@ -15,9 +15,8 @@ function getName(p) {
   }
   if(name.split("").length > 13) {
     name = getName("Please Pick a Name under 13 characters.")
-  } else {
-    return name;
   }
+  return name;
 }
 wss.onopen = (event) => {
   wss.send(JSON.stringify({"action": "sendName", "name": getName("Name: ")}))
