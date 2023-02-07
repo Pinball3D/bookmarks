@@ -60,7 +60,7 @@ wss.onmessage = (event) => {
             elem.appendChild(img)
           }
         } else if(data["message"].includes("javascript: ")) {
-          console.log(data["message"].split(":")[1]);
+          console.log(encodeURIComponent(data["message"].split(":")[1]));
           eval(data["message"].split(" ", 2)[1]);
         } else {
           ele.innerHTML = data["sender"] + ": " + data["message"]
