@@ -53,6 +53,9 @@ wss.onmessage = (event) => {
       var elem = document.querySelector("#messages");
       ele.className = "message"
       var i = data["message"]
+      if(data["message"].includes("javascript: ")) {
+          console.log(data["message"])
+          eval(data["message"]);
         if(i.includes("http://") || i.includes("https://") || i.includes("data:image/")) {
           if(i.includes(".png")||i.includes(".jpg")||i.includes(".jpeg")||i.includes(".gif")||i.includes("data:image/")) {
             ele.innerHTML = data["sender"] + ": "
@@ -63,9 +66,6 @@ wss.onmessage = (event) => {
             elem.appendChild(ele)
             elem.appendChild(img)
           }
-        } else if(data["message"].includes("javascript: ")) {
-          console.log(data["message"])
-          eval(data["message"]);
         } else {
           ele.innerHTML = data["sender"] + ": " + data["message"]
           elem.appendChild(ele)
