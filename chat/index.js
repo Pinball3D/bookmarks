@@ -2,7 +2,7 @@ var personlist = {};
 var name = "";
 var privateMessages = {};
 var wss = new WebSocket("wss://18.205.105.185.sslip.io/");
-document.querySelector("#msgbox").onkeydown = function(key) {
+document.querySelector("#msgbox").onkeyup = function(key) {
   if(key.key == "Enter") {
     wss.send(JSON.stringify({"action": "sendMessage", "message": document.querySelector("#msgbox").value, "sender": name}))
     document.querySelector("#msgbox").value="";
