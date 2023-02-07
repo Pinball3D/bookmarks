@@ -21,6 +21,10 @@ function getName(p) {
 wss.onopen = (event) => {
   wss.send(JSON.stringify({"action": "sendName", "name": getName("Name: ")}))
 }
+wss.onclose = (event) => {
+  alert("You have been kicked from the chat.");
+  window.location.href="about:blank";
+}
 wss.onmessage = (event) => {
   var data = JSON.parse(event.data);
   console.log(data);
