@@ -8,12 +8,19 @@ document.querySelector("#msgbox").onkeydown = function(key) {
     document.querySelector("#msgbox").value="";
   }
 }
-wss.onopen = (event) => {
-  name = prompt("Name: ");
+function getName(p) {
+  name = prompt(p);
   if(name.toLowerCase() == "rusa") {
     name = "Rusha Alluli"
   }
-  wss.send(JSON.stringify({"action": "sendName", "name": name}))
+  if([name].length > 13) {
+    name = getName("Please Pick a Name under 13 characters.")
+  } else {
+    return name
+  }
+}
+wss.onopen = (event) => {
+  wss.send(JSON.stringify({"action": "sendName", "name": getName("Name: ")}))
 }
 wss.onmessage = (event) => {
   var data = JSON.parse(event.data);
