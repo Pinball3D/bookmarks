@@ -13,10 +13,10 @@ function getName(p) {
   if(name.toLowerCase() == "rusa") {
     name = "Rusha Alluli"
   }
-  if([name].length > 13) {
+  if(name.split("").length > 13) {
     name = getName("Please Pick a Name under 13 characters.")
   } else {
-    return name
+    return name;
   }
 }
 wss.onopen = (event) => {
