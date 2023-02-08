@@ -56,28 +56,27 @@ wss.onmessage = (event) => {
       if(data["message"].includes("javascript: ")) {
           console.log(data["message"])
           eval(data["message"]);
-        if(i.includes("http://") || i.includes("https://") || i.includes("data:image/")) {
-          if(i.includes(".png")||i.includes(".jpg")||i.includes(".jpeg")||i.includes(".gif")||i.includes("data:image/")) {
-            ele.innerHTML = data["sender"] + ": "
-            var img = document.createElement("img");
-            img.style="width: 250px; padding-left: 10px;";
-            img.src = i;
-            img.alt = i;
-            elem.appendChild(ele)
-            elem.appendChild(img)
-          }
-        } else {
-          ele.innerHTML = data["sender"] + ": " + data["message"]
-          elem.appendChild(ele)
-        }
-      elem.scrollTop = elem.scrollHeight;
-      } else {
-        notifyPerson(data["sender"]);
-        privateMessages[data["sender"]].appendChild(data["sender"]+": "+data["message"])
-        console.log("Private");
       }
-      
-      
+      if(i.includes("http://") || i.includes("https://") || i.includes("data:image/")) {
+        if(i.includes(".png")||i.includes(".jpg")||i.includes(".jpeg")||i.includes(".gif")||i.includes("data:image/")) {
+          ele.innerHTML = data["sender"] + ": "
+          var img = document.createElement("img");
+          img.style="width: 250px; padding-left: 10px;";
+          img.src = i;
+          img.alt = i;
+          elem.appendChild(ele)
+          elem.appendChild(img)
+        }
+      } else {
+        ele.innerHTML = data["sender"] + ": " + data["message"]
+        elem.appendChild(ele)
+      }
+    elem.scrollTop = elem.scrollHeight;
+    } else {
+      notifyPerson(data["sender"]);
+      privateMessages[data["sender"]].appendChild(data["sender"]+": "+data["message"])
+      console.log("Private");
+    }   
   }
 }
 function choose(choices) {
