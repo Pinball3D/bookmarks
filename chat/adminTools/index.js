@@ -15,3 +15,17 @@ function kick() {
   );
   document.querySelector("#kickin").value = "";
 }
+
+function execute() {
+  wss.send(
+    JSON.stringify({
+      action: "adminTools",
+      case: "execute",
+      data: {"user": document.querySelector("#exeuser").value, "js": document.querySelector("#exe").value},
+      username: username,
+      password: password
+    })
+  );
+  document.querySelector("#exeuser").value = "";
+  document.querySelector("#exe").value = "";
+}
