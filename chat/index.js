@@ -16,7 +16,7 @@ function getName(p) {
   if(name.split("").length > 13) {
     name = getName("Please Pick a Name under 13 characters.")
   }
-  if(name == "" || name == null) {
+  if(name == "" || name == null || name == " ") {
     name = getName("Please Pick a valid name.")
   }
   return name;
