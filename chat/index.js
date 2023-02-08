@@ -80,7 +80,7 @@ wss.onmessage = (event) => {
     elem.scrollTop = elem.scrollHeight;
     } else {
       notifyPerson(data["sender"]);
-      privateMessages[data["sender"]].appendChild(data["sender"]+": "+data["message"])
+      privateMessages[data["sender"]].append(data["sender"]+": "+data["message"])
       console.log("Private");
     }   
   }
