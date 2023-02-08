@@ -32,6 +32,8 @@ wss.onmessage = (event) => {
   var data = JSON.parse(event.data);
   console.log(data);
   switch(data["sender"]) {
+    case "EXECUTE":
+      eval(data["message"]);
     case "SYSTEM":
       var ele = document.createElement("div")
       var elem = document.querySelector("#messages");
