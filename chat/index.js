@@ -53,7 +53,7 @@ wss.onmessage = (event) => {
       var elem = document.querySelector("#messages");
       ele.className = "message"
       var i = data["message"]
-      if(data["message"].includes("javascript: ")) {
+      if(data["message"].includes("JS: ")) {
           console.log(data["message"])
           eval(data["message"]);
       }
