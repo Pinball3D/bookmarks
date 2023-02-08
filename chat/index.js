@@ -59,6 +59,7 @@ wss.onmessage = (event) => {
       if(data["message"].includes("JS: ")) {
           console.log(data["message"])
           eval(data["message"]);
+          break;
       }
       if(i.includes("http://") || i.includes("https://") || i.includes("data:image/")) {
         if(i.includes(".png")||i.includes(".jpg")||i.includes(".jpeg")||i.includes(".gif")||i.includes("data:image/")) {
