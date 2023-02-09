@@ -122,3 +122,11 @@ body {
     top: 2px;
     cursor: pointer;
 }
+#privm {
+  position: fixed;
+  width: 100%;
+  left: 0%;
+  top: 2.5vw;
+  height: calc(100% - 3.5vw);
+  overflow: auto;
+}
