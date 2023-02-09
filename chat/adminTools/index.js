@@ -3,6 +3,9 @@ const params = new URLSearchParams(window.location.search);
 var up = prompt("Enter your username and password in the following format: username+password. ex: andrew+12345").split("+")
 const username = up[0]; // parseInt(params.get("user"))
 const password = up[1]; //parseInt(params.get("user"))
+if(username == "" || password == "" || username == null || password == null) {
+  window.location.reload();
+}
 function kick() {
   wss.send(
     JSON.stringify({
