@@ -127,10 +127,10 @@ function privateClick(event) {
     var msg = document.createElement("div")
     msg.id="message";
     msg.innerHTML=m;
-    div.querySelector("#messages").appendChild(div)
+    document.querySelector("#privm").appendChild(div)
   })
   div.className = "privateMSG";
-  div.innerHTML = "<div id='x' onclick='x()'>X</div><div id='title' style='width: 100%; left: 0%;'>Private Message: "+event.target.dataset.name+"</div><div id='messages' style='left: 0%; width: 100%;'></div><input id='msgbox' style='left: 0%; width: 100%' data-name='"+event.target.dataset.name+"' placeholder='Send a message...'></input>";
+  div.innerHTML = "<div id='x' onclick='x()'>X</div><div id='title' style='width: 100%; left: 0%;'>Private Message: "+event.target.dataset.name+"</div><div id='privm' style='left: 0%; width: 100%;'></div><input id='msgbox' style='left: 0%; width: 100%' data-name='"+event.target.dataset.name+"' placeholder='Send a message...'></input>";
   document.querySelector("#main").style.filter = "blur(10px)";
   document.body.appendChild(div);
 }
