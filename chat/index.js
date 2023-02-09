@@ -114,7 +114,7 @@ function removePerson(name) {
 }
 function notifyPerson(name) {
   var circle = document.createElement("div");
-  circle.style="transform: translate(-0%, -50%); position: absolute; top: 50%; right: 10px; background-color: red; border-radius: 50%; width: 15px; height: 15px;";
+  circle.style="transform: translate(-0%, -50%); position: absolute; top: 50%; right: -35%; background-color: red; border-radius: 50%; width: 15px; height: 15px; display: inline-block;";
   document.querySelector("div[data-name='"+name+"']").appendChild(circle);
 }
 function unNotifyPerson(name) {
