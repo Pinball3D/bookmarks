@@ -131,7 +131,7 @@ function privateClick(event) {
     var msg = document.createElement("div")
     msg.id="message";
     msg.innerHTML=m;
-    document.querySelector("#privm").appendChild(div)
+    document.querySelector("#privm").appendChild(msg)
   })
 }
 function x() {
