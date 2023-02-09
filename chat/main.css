@@ -57,6 +57,7 @@ body {
   border-style: none solid solid none;
   border-width: 2px;
   cursor: pointer;
+  display: inline-block;
 }
 #title {
   position: absolute;
